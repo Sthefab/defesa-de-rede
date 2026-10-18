@@ -51,7 +51,7 @@ Escrevi um e-mail de teste no PC 1-1 (Suk-Yi) para o BRuser1, mas o envio não c
 
 Essa etapa não é avaliada no lab, e o Packet Tracer às vezes não converge direito nesse tipo de serviço. A configuração de e-mail está validada pelo resultado final (65/65).
 
-![E-mail escrito no PC 1-1](imagens/06-email-enviado.png)
+![E-mail escrito no PC 1-1](imagens/06-email-escrito.png)
 
 ## Parte 3: Serviço de FTP
 
