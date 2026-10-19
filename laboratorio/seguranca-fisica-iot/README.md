@@ -24,6 +24,7 @@ A atividade foi concluída em 3 partes. A ideia foi montar a segurança de uma c
 Liguei a sirene (Home_Siren) na porta (Home Doors) usando o cabo personalizado de IoT, pela interface DO de cada um. Com isso, abrir a porta (ALT + clique) dispara a sirene.
 
 ![Sirene conectada à porta](imagens/02-sirene-conectada-porta.png)
+
 *Imagem 2: Sirene conectada à porta pelo cabo personalizado de IoT*
 
 ### Rede sem fio HomeNet
@@ -36,12 +37,19 @@ Nos quatro dispositivos (Home_Siren, Home Doors, Home_Motion_Sensor e Home_Webca
 - IP: DHCP (rede 192.168.0.0/24)
 
 ![Home_Siren](imagens/03-config-wifi-sirene.png)
+
 *Imagem 3: Configuração da rede sem fio no Home_Siren (SSID HomeNet, WPA2-PSK,AES e DHCP)*
+
 ![Home Doors](imagens/04-config-wifi-porta.png)
+
 *Imagem 4: Configuração da rede sem fio no Home Doors*
+
 ![Home_Webcam](imagens/05-config-wifi-webcam.png)
+
 *Imagem 5: Configuração da rede sem fio na Home_Webcam*
+
 ![Home_Motion_Sensor](imagens/06-config-wifi-sensor-movimento.png)
+
 *Imagem 6:Configuração da rede sem fio no Home_Motion_Sensor*
 
 ### Endereços MAC
@@ -68,6 +76,7 @@ Acessei o roteador pelo navegador do Home Office PC (`192.168.0.1`), fui em Wire
 Só quem está na lista consegue entrar na rede, mesmo sabendo a senha do Wi-Fi.
 
 ![Filtro de MAC no roteador](imagens/07-filtro-mac-roteador.png)
+
 *Imagem 7: Wireless MAC Filter habilitado no roteador, com os MACs dos dispositivos na lista*
 
 ## Parte 2: Servidor de registro
@@ -75,19 +84,29 @@ Só quem está na lista consegue entrar na rede, mesmo sabendo a senha do Wi-Fi.
 Criei uma conta no servidor de registro (`10.3.0.125`) e registrei cada dispositivo em Config > Settings > IoT Server, selecionando **Remote Server** com o endereço do servidor e o usuário `HomeUser`.
 
 ![Siren no servidor](imagens/08-servidor-registro-sirene.png)
+
 *Imagem 8: Registro do Home_Siren no servidor remoto de IoT*
+
 ![Doors no servidor](imagens/09-servidor-registro-porta.png)
+
 *Imagem 9: Registro do Home Doors no servidor remoto de IoT*
+
 ![Motion Sensor no servidor](imagens/10-servidor-registro-sensor-movimento.png)
+
 *Imagem 10: Registro do Home_Motion_Sensor no servidor remoto de IoT*
+
 ![Webcam no servidor](imagens/11-servidor-registro-webcam.png)
+
 *Imagem 11: Registro da Home_Webcam no servidorremoto de IoT*
 
 Depois, fiz login no servidor pelo navegador do Home Office PC e confirmei que os quatro dispositivos apareceram registrados.
 
 ![Login no servidor de registro](imagens/12-login-servidor-registro.png)
+
 *Imagem 12: Tela de login do servidor de registro*
+
 ![Dispositivos registrados](imagens/13-dispositivos-registrados.png)
+
 *Imagem 13: Os quatro dispositivos registrados no servidor*
 
 ## Parte 3: Testando os dispositivos
@@ -99,6 +118,7 @@ No painel do servidor dá para ver o status de cada dispositivo e controlar algu
 - Ao mover o mouse sobre o sensor (ALT), ele detecta movimento e a webcam mostra a imagem de alguém passando
 
 ![Painel com os dispositivos e a webcam](imagens/14-painel-dispositivos-webcam.png)
+
 *Imagem 14: Painel do servidor com os dispositivos abertos e a webcam mostrando uma pessoa passando*
 
 ## Resultado
@@ -106,6 +126,7 @@ No painel do servidor dá para ver o status de cada dispositivo e controlar algu
 Atividade concluída com 12/12 nos itens de avaliação.
 
 ![Resultado da atividade](imagens/15-resultado-atividade.png)
+
 *Imagem 15: resultado da atividade com pontuação 12/12*
 
 ## O que aprendi
