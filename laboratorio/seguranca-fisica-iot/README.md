@@ -1,4 +1,4 @@
-# Segurança Física com Dispositivos de IoT (Packet Tracer)
+# Segurança Física com Dispositivos de IoT (Packet Tracer) 
 
 Atividade do Cisco Networking Academy em que configurei dispositivos de IoT de uma casa para melhorar a segurança física, com rede sem fio protegida, filtro de MAC e monitoramento remoto por um servidor de registro.
 
