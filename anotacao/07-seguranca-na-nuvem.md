@@ -275,8 +275,6 @@ Na prática os dois são combinados (**criptografia híbrida**). O **TLS**, por 
 
 ### ---
 
----
-
 ## 9. Comparações rápidas pra fixar
 
 ### VM x contêiner
