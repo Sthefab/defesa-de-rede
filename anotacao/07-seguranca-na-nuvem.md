@@ -273,15 +273,50 @@ Pontos que o material do curso explica de forma confusa ou deixa de fora.
 
 Na prática os dois são combinados (**criptografia híbrida**). O **TLS**, por exemplo, usa assimétrica pra trocar a chave e simétrica (AES) pra criptografar a sessão.
 
-### Conceitos que faltam
+### ---
 
-- **Shadow IT:** nome do problema dos apps não autorizados que o texto descreve (funcionários usando serviços de nuvem sem a TI saber). Ferramentas de **CASB** ajudam a dar visibilidade e controle
-- **Dados em uso (data in use):** é o nome mais comum do estado "em processamento" nas outras referências
-- **Exemplo clássico de configuração incorreta:** bucket de armazenamento (ex: S3) deixado **público** por engano, expondo dados
-- **Gerenciamento de chaves (KMS):** criptografar não adianta se a chave ficar mal guardada. Chaves devem ficar separadas dos dados e ter rotação
-- **MFA e privilégio mínimo no IAM:** são as defesas mais básicas contra credenciais comprometidas
-- **Security groups x ACLs de rede:** em nuvem (ex: AWS), o **security group** é stateful (liberou a ida, a volta vai junto) e a **ACL de rede** é stateless, como a ACL e o filtro de pacotes vistos nos módulos anteriores
-- **Microssegmentação e Zero Trust:** limitar o **movimento lateral** do atacante, porque cada carga de trabalho fica isolada da outra
-- **Segurança de contêineres:** usar imagens de fontes confiáveis, escanear imagens atrás de vulnerabilidades, não rodar como root e aplicar privilégio mínimo
-- **VM sprawl e snapshots:** snapshots e imagens antigas também guardam dados e vulnerabilidades, então entram no inventário e na auditoria
-- **CIA na nuvem:** tudo isso se resume a proteger **confidencialidade** (criptografia, IAM), **integridade** (hash, controle de versão) e **disponibilidade** (redundância, backups, proteção DDoS)
+---
+
+## 9. Comparações rápidas pra fixar
+
+### VM x contêiner
+
+| | Máquina virtual | Contêiner |
+| --- | --- | --- |
+| O que tem | SO completo + aplicativo | Só o aplicativo e suas dependências |
+| Peso | Mais pesada | Mais leve e rápida |
+| Isolamento | Mais forte | Mais fraco (compartilha o SO do host) |
+| Exemplo | VMs em hypervisor | Docker, gerenciado por Kubernetes |
+
+### Hypervisor tipo 1 x tipo 2
+
+- **Tipo 1:** roda direto no hardware (ex: VMware ESXi, Hyper-V)
+- **Tipo 2:** roda como aplicativo dentro de um SO comum (ex: VirtualBox)
+
+### Simétrica x assimétrica
+
+| | Simétrica | Assimétrica |
+| --- | --- | --- |
+| Chaves | Uma só, compartilhada | Duas: pública e privada |
+| Velocidade | Rápida | Lenta |
+| Exemplos | AES | RSA, ECC |
+
+### Criptografia x hash
+
+| | Criptografia | Hash |
+| --- | --- | --- |
+| Usa chave | Sim | Não |
+| Dá pra reverter | Sim, com a chave | Não (unidirecional) |
+| Serve pra | Confidencialidade | Integridade |
+
+### Os 3 estados dos dados
+
+- **Em repouso:** armazenados
+- **Em trânsito:** sendo transmitidos
+- **Em processamento:** sendo usados ou calculados
+
+### Quem é responsável pelo quê
+
+- Os **dados** são sempre responsabilidade do **cliente**, em qualquer modelo
+- A **infraestrutura física** é do **provedor** (CSP) em IaaS, PaaS e SaaS
+- Quanto mais "pronto" o serviço (SaaS), mais o provedor cuida
